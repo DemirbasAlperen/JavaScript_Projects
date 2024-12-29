@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* 100vh ekran yüksekliğinin 100 % ü anlamına gelir */
+    margin: 0;
+    overflow: hidden;
+    color: white;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+    /* 90vw ekran genişliğinin 90 % ı anlamına gelir */
+}
+
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    cursor: pointer;
+    /* cursor : fare imleci */
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    /* position: relative; ile film başlıklarını alt kısıma alacağız */
+    transition: flex 0.7s ease-in;
+    /* transition u js de dinamik hale getireceğiz */
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    margin: 0px;
+    opacity: 0;
+    /* opacity: 0; vermemizin sebebi js de tıklayınca görünmesini sağlayacağız*/
+}
+
+.panel.active {
+    flex: 5;  
+    /* active olan resimi diğerlerine göre 5 kat büyütür */
+}
+
+.panel.active h3 {
+    text-decoration: underline;   /* yazı altlarına çizgi tanımladık */
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+    
+}
+
+@media (max-width: 600px){
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),.panel:nth-of-type(5){
+        display: none;
+    }
+}
