@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{  
+    /* burada vereceğimiz renklere isim ataması yaptık. Yani ilerleme çizgimizin fill(dolu) haline #ff4d6d rengini, empty(boş) haline ise #dee2e6 rengini verdik  */
+    --line-border-fill: #ff4d6d;
+    --line-border-empty: #dee2e6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;  /* rakamları eşit boşluklara böldük*/
+    position: relative;
+    margin-bottom: 30px;
+    width: 350px;
+    max-width: 100%;
+}
+
+/* gri çizgi için :*/
+.progress-container::before {
+    content: '';  /* çizginin görünmesi için bunu tanımladık */
+    background-color: var(--line-border-empty);
+    height: 4px;
+    width: 100%;
+    position: absolute;  /* sayıların çizgi üzerinde görünmesi için*/
+    top: 50%;  /* çizginin sayııların tam ortasında olmasını sağladık*/
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;  /* sayıları çizginin üzerine aldık*/
+    transition: 0.4s ease;
+}
+
+/* kırmızı çizgi için*/
+.progress {
+    background-color: var(--line-border-fill);
+    height: 4px;
+    width: 0%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.circle {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+ transition: 0.4s ease;
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 24px;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.btn:active {  /* buton active olunca*/
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+}
