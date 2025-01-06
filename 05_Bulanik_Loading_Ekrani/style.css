@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik Moonrocks', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;    /* vh; görüntüleme alanı yüksekliği anlamına gelir. Bu birim, görüntüleme alanının yüksekliğine dayanır. 100vh değeri, görüntüleme alanı yüksekliğinin %100'üne eşittir.*/
+    margin: 0;
+    overflow: hidden;  /* sayfada bulunan scroll u gizler */
+}
+
+.bg {
+    background: no-repeat center/cover url('https://wallpaperaccess.com/full/6549944.png');   /*resim tekrar etmesin(no-repeat), ortada bulunsun(center) ve alanı kaplasın(cover) anlamına gelir*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;   /* 0% rakamının arkasına geçmesini istedik */
+    filter: blur(0px);  /* sayfaya bulanıklık katacak kısım */
+}
+
+.loading-text {
+    color: #f5d703;
+    font-size: 100px;
+}
