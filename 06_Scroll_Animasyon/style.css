@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #DD6D17;
+    display: flex;
+    /*Esnek öğelerin esnek container'a yerleştirildiği yönü tanımlar. Bir container'a display:flex özelliği verildiği an da flex-direction varsayılan olarak row gelir. Yani container içindeki divler yatay olarak hizalanır. Eğer dikey olarak hizalanmasını istersek flex-direction:column dememiz gerekir.*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;  /*sayfamızda bulunan x eksenindeki scroll u gizledik*/
+}
+
+h1 {
+    margin: 10px;
+    color: blanchedalmond;
+}
+
+.box {
+    background-color: #FFC329;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);   /* gölgelendirme */
+    border: 2px solid #fff;
+    transform: translateX(400%);    /* Blog box ları x ekseninde 400% kaydırdık */
+    transition: transform 0.8s ease;
+}
+
+.box:nth-last-of-type(even) {    /*çift olanları ekranın sol tarafına(-x yönüne) çektik*/
+    transform: translateX(-400%);
+}
+
+.box.show {     /*show class ını js de ekleyeceğiz : show class ı eklenen class box lar ekranda görünecek*/
+    transform: translateX(0);
+}
+
+.box h2 {
+    font-size: 35px;
+}
+
+
+
