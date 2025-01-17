@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dalga Animasyonu</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>EBA Hesabı ile Giriş Yap</h1>
+        <form>
+            <div class="form-control">
+                <input type="email" required>
+                <!-- required : girilmesi zorunlu alan olarak ayarlar -->
+                <label>Eposta</label>
+                <!--  Buradaki işlem app.js içerisinde gerçekleştirilecek
+                    <label>
+                        <span style="transition-delay: ...ms">E</span>
+                        <span style="transition-delay: ...ms">P</span>
+                        <span style="transition-delay: ...ms">o</span>
+                        <span style="transition-delay: ...ms">s</span>
+                        <span style="transition-delay: ...ms">t</span>
+                        <span style="transition-delay: ...ms">a</span>
+                    </label> 
+                -->
+            </div>
+            <div class="form-control">
+                <input type="password" required>
+                <label>Şifre</label>
+            </div>
+            <button class="btn">Giriş</button>
+            <p class="text">Hesabın mı yok? <a href="#">EBA Hesabı Oluştur</a></p>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
