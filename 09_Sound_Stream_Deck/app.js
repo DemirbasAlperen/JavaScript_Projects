@@ -16,7 +16,7 @@ sounds.forEach((sound) => {   // sounds içerisine girip hepsini gezdik
     document.getElementById("buttons").appendChild(btn);   // buttons id sini seçtik ve altına bir düğüm(btn isimli) daha ekledik
 })
 
-function stopSongs() {
+function stopSongs() {            // Burada seslere arka arkaya tıkladığımızda ilk tıkladığımız duracak ve son tıkladığımız çalmaya başlayacak böylece sesler karışmayacak
     sounds.forEach((sound) => {
         const song = document.getElementById(sound);
 
