@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --orange-color: #f16623; /*birden fazla yerde kullanacağımız için burada tanımladık*/
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 5px;
+    letter-spacing: 2px;
+}
+
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.faq {
+    background-color: transparent;    /*arka plan rengi ile aynı yapar*/
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+/*active class*/
+.faq.active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--orange-color);
+}
+
+.faq.active::before, .faq.active::after {
+    content: '\f075'; /* Unicode karakter kodu */
+    font-family: 'Font Awesome 6 Free';
+    color: #588157;
+    font-size: 7rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+    opacity: 0.2;
+} 
+
+.faq.active::before {
+    color: #c77dff;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);   /*üstteki icon döndürüldü*/
+}
+
+.faq-title {
+    margin: 0 35px 0 0;
+    transition: 0.3s ease;
+}
+
+.faq.active .faq-title {
+    color: var(--orange-color);
+}
+
+.faq-text {
+    display: none;  /* active olmadan gözükmemesini istiyoruz */
+    margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+    display: block;  /*active olunca text açılacak*/
+}
+
+.faq-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    transition: 0.3s ease;
+}
+
+.faq.active .faq-toggle {
+    color: var(--orange-color);
+}
+
+.faq-toggle .fa-xmark {
+    display: none;    /* X iconunu active olmadan görünmemesini istedik*/
+}
+
+.faq.active .faq-toggle .fa-xmark {
+    display: block;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+}
