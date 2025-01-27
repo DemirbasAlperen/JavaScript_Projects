@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --darkGreen-color: #1b4332;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #b7e4c7 50%, var(--darkGreen-color) 50%);       /*linear-gradient : renkler arası geçiş ve bottom a doğru olacak*/
+}
+
+nav {
+    background-color: #fff;
+    padding: 20px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: width 0.6s linear;   /*buton a basınca width üzernde değişim olacak*/
+}
+
+nav.active {   /*nav active olduğu zaman*/
+    width: 420px;
+}
+
+nav ul {
+    display: flex;   /* burada li ler yan yana geldi*/
+    list-style-type: none; /* noktaları yok ettik */
+    padding: 0;
+    margin: 0;
+    width: 0;
+    transition: width 0.6s linear;
+}
+
+nav.active ul {   /*nav active olduğu zaman ul*/
+    width: 100%;
+}
+
+nav ul li {
+    transform: rotateY(0deg); /*başlangıçta li lerin konumu 0*/
+    opacity: 0;
+    transition: transform 0.6s linear, opacity 0.6s linear;  /*transform ve opacity ye transition verdik*/
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);  /*nav active olunca li ler kendi etrafında 360 derece dönecek*/
+}
+
+nav ul a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+}
+
+.icon {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.icon .line {   /*burada iki tane line üst üste*/ 
+    background-color: var(--darkGreen-color);
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: transform 0.6s linear;  /*aşağıdaki çarpı transform larına transition verdik*/
+}
+
+.icon .line2 {   /*burada üst üste olan line ları ayırdık*/
+    top: auto;
+    bottom: 10px;
+}
+
+/*çarpı işaretini elde etmek*/
+nav.active .icon .line1 {
+    transform: rotate(-765deg) translateY(5.5px);  /*4 kere kendi etrafında dönecek ve çarpı işaretine dönüşecekler*/
+}
+
+nav.active .icon .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+}
