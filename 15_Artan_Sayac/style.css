@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Playwrite IN", serif;
+    font-weight: bold;
+    background-color: #a4ac86;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: column;      /*sayılar , iconlar ve yazıları dikey kolonda hizalar. Bunu kullanmazsak dağınık olur*/
+    justify-content: center;
+    margin: 30px 50px;
+    text-align: center;
+}
+
+.counter {
+    font-size: 45px;
+    margin-top: 10px;
+    letter-spacing: 5px;
+}
+
+span {
+    letter-spacing: 3px;
+}
+
+@media (max-width: 1350px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .counter {
+        font-size: 25px;
+        margin-top: 5px;
+        letter-spacing: 1px;
+    }
+}
