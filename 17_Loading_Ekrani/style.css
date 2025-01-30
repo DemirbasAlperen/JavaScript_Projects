@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Oswald", serif;
+    background-color: #fdf0d5;
+    color: #c1121f;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.kinetic {
+    position: relative;
+    height: 80px;
+    width: 80px;
+}
+
+span {
+    position: absolute;
+    top: 120px;
+}
+
+.kinetic::after, .kinetic::before {    /*burada before ve after üst üsttedir*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    border-bottom-color: #c1121f;     /*yazının alt kısmında bir üçgen oluşturur. (left ile solda, right ile sağda, top ile yukarıda da üçgeç oluşturulabilir)*/
+    border-radius: 50%;  /*dairesel bir üçgen gibi görünür*/
+    animation: rotateA 2s linear infinite 0.5s;
+}
+
+.kinetic::before {      
+    transform: rotate(90deg);   /*before u after üzerinden ayırdık*/
+    animation: rotateB 2s linear infinite;
+}
+
+@keyframes rotateA {   /*1.üçgen için hareket animasyonu tanımladık*/
+    0%, 25% {
+        transform: rotate(0deg);
+    }
+
+    50%, 75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateB {    /*2.üçgen için hareket animasyonu tanımladık*/
+    0%, 25% {
+        transform: rotate(90deg);
+    }
+
+    50%, 75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(450deg);
+    }
+}
