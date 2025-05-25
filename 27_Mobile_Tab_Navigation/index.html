@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Js -->
+    <script src="app.js" defer></script>
+    <title>Mobile Tab Navigation</title>
+</head>
+
+<body>
+    <div class="phone">
+        <!-- aşağıdaki div içeriğine show class ı js de eklenecek -->
+        <div class="content show about">
+            <div class="text">
+                <h1>About Me</h1>
+                <p>I am Front-End Developer</p>
+            </div>
+        </div>
+        <div class="content blog">
+            <div class="text">
+                <h1>Blog</h1>
+                <p>Here are my articles</p>
+            </div>
+        </div>
+        <div class="content map">
+            <div class="text">
+                <h1>Roadmap</h1>
+                <p>My life roadmap...</p>
+            </div>
+        </div>
+        <div class="content contact">
+            <div class="text">
+                <h1>Contact</h1>
+                <p>You can contact me using the links here</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <!-- aşağıdaki div içine active class ı js de eklenecek -->
+                <li class="active"><i class="fa-solid fa-address-card"></i>
+                    <p>About Me</p>
+                </li>
+                <li><i class="fa-brands fa-blogger"></i>
+                    <p>Blog</p>
+                </li>
+                <li><i class="fa-solid fa-map"></i>
+                    <p>Roadmap</p>
+                </li>
+                <li><i class="fa-solid fa-book-open-reader"></i>
+                    <p>Contact</p>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</body>
+
+</html>
